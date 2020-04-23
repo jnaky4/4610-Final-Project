@@ -142,5 +142,10 @@ public class PlayerMovement : MonoBehaviour
             bounceControl = true;
             rb.AddForce(0, verticalForce * 2 * Time.deltaTime, 0, ForceMode.VelocityChange);
         }
+        if (collision.collider.tag == "Side Bounce")
+        {
+            bounceControl = true;
+            rb.AddForce(verticalForce * 2 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+        }
     }
 }

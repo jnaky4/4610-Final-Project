@@ -37869,6 +37869,27 @@ Transform:
   m_Father: {fileID: 339180153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1173997962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3346078706183863206, guid: 4298449d9ad4438479c55dfe10f19101,
+    type: 3}
+  m_PrefabInstance: {fileID: 3346078706319978878}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1173997967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173997962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b602a7838a5cd4395321167a3589dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedH: 2
+  speedV: 2
+  speed: 0
 --- !u!1 &1182208732
 GameObject:
   m_ObjectHideFlags: 0
@@ -65664,6 +65685,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Drag
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1360920643920625221, guid: 4c2f1f3052990a54bb41ea19da62d680,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1360920643920625222, guid: 4c2f1f3052990a54bb41ea19da62d680,
         type: 3}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     public bool flying = false;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float verticalForce = 2000.0f;
     int count = 0;
     const float maxSpeed = 60f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +69,23 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
             }
         }
+        if (Input.GetKey("q"))
+        {
+            if (!flying)
+            {
+                transform.Rotate(Vector3.up, -50.0f * Time.deltaTime);
+
+            }
+        }
+        if (Input.GetKey("e"))
+        {
+            if (!flying)
+            {
+
+                transform.Rotate(Vector3.up, 50.0f * Time.deltaTime);
+
+            }
+        }
 
         if (Input.GetKey("space"))
         {
@@ -79,6 +98,19 @@ public class PlayerMovement : MonoBehaviour
             }
 
         }
+        if (Input.GetKey(KeyCode.LeftShift)) 
+        {
+            
+
+            if (!flying)
+            {
+                rb.velocity = Vector3.zero;
+            }
+
+        }
+
+
+
         Debug.Log(rb.velocity.y);
         if (rb.velocity.y < .1 && rb.velocity.y > -.1)
         {

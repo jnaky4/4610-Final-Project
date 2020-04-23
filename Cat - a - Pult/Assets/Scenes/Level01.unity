@@ -61956,8 +61956,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f86319f2b6d7454d957028507bf5049, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flying: 0
+  jumpVelocity: 0
   rb: {fileID: 2014528986}
-  verticalForce: 500
+  verticalForce: 2000
 --- !u!65 &2014528982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62060,6 +62062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bee0b055bc2ef9e4897b026d0c372ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
 --- !u!1 &2017581496
 GameObject:
   m_ObjectHideFlags: 0

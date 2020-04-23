@@ -5,16 +5,26 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    public float verticalForce = 2000.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(0, 2000, 0);
+        
     }
 
     // Update is called once per frame
-    void Update()
+    // FixedUpdate is used for physics and performs better
+    void FixedUpdate()
     {
-        
+        rb.AddForce(0, verticalForce * Time.deltaTime, 0);
+        if (Input.GetKey("d"))
+        {
+            rb.AddForce(500 * Time.deltaTime, 0 , 0);
+        }
+        if (Input.GetKey("a"))
+        {
+            rb.AddForce(-500 * Time.deltaTime, 0, 0);
+        }
     }
 }

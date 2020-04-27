@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
 
 public class Shoot : MonoBehaviour {
 
     public GameObject bullet;
     public float speed = 5;
+
+    public List<Sphere> sperer;
 
 	// Use this for initialization
 	void Start () {

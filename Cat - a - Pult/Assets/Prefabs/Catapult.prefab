@@ -367,7 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cat: {fileID: 2724634834656916283}
   flying: 0
-  bounceControl: 0
+  bounceControl: 1
   jumpVelocity: 0
   rb: {fileID: 0}
   verticalForce: 2000

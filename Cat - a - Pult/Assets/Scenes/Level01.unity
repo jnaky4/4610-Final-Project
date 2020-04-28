@@ -66937,7 +66937,7 @@ PrefabInstance:
     - target: {fileID: 1519772212524865086, guid: c18e1be019310f5458b4c02ae8514363,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.04
+      value: 1.74
       objectReference: {fileID: 0}
     - target: {fileID: 1519772212524865086, guid: c18e1be019310f5458b4c02ae8514363,
         type: 3}
@@ -67074,7 +67074,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8531162810315528693}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -67091,6 +67091,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9f0c6fe7713d042abf1b1cf07c6acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
-  explosionSpeed: 3
-  power: 250
+  radius: 30
+  explosionSpeed: 30
+  power: 5000

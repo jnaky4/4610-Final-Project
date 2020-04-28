@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -138,11 +138,12 @@ public class PlayerMovement : MonoBehaviour
     {
         
         Debug.Log(collision.collider.tag);
+        
 
-        if(collision.collider.tag == "Level is Won")
+        if (collision.collider.tag == "LevelWon")
         {
             Debug.Log("Level Complete");
-
+            SceneManager.LoadScene(2);
 
         }
 

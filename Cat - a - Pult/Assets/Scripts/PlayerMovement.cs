@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        Debug.Log(rb.velocity.y);
+        //Debug.Log(rb.velocity.y);
         if (rb.velocity.y < .1 && rb.velocity.y > -.1)
         {
             //Debug.Log("landed");
@@ -136,7 +136,19 @@ public class PlayerMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.collider.name);
+        
+        Debug.Log(collision.collider.tag);
+
+        if(collision.collider.tag == "Level is Won")
+        {
+            Debug.Log("Level Complete");
+
+
+        }
+
+
+
+
         if (collision.collider.tag == "Bounce")
         {
             bounceControl = true;
@@ -144,8 +156,59 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.collider.tag == "Side Bounce")
         {
+            var relativePosition = (collision.transform.position - transform.position).normalized;
+            if (relativePosition.x > 0)
+            {
+                Debug.Log("right");
+            }
+            else
+            {
+                Debug.Log("left");
+                
+            }
+
+            if (relativePosition.y > 0)
+            {
+                Debug.Log("above");
+            }
+            else
+            {
+                Debug.Log("below");
+            }
+
+            if (relativePosition.z > 0)
+            {
+                Debug.Log("front");
+            }
+            else
+            {
+                Debug.Log("behind");
+            }
+
+
+            //Vector3 direction = (collision.transform.position - transform.position).normalized;
+
+            //if(Vector3.Dot (transform.forward, direction) > 0)
+            //{
+            //    Debug.Log("back");
+            //}
+            //if (Vector3.Dot(transform.forward, direction) < 0)
+            //{
+            //    Debug.Log("front");
+            //}
+            //if (Vector3.Dot(transform.forward, direction) == 0)
+            //{
+            //    Debug.Log("side");
+            //}
+
+
+
+            //(transform.position - collision.collider.gameObject.transform.position).normalized;
+
+
             bounceControl = true;
-            rb.AddForce(verticalForce * 2 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            //rb.AddForce(verticalForce * 2 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
         }
     }
 }

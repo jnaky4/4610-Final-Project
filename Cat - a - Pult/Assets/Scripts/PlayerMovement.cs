@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float verticalForce = 2000.0f;
     int count = 0;
     const float maxSpeed = 60f;
-
+    public GameObject Cat;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+
+
+
     // FixedUpdate is used for physics and performs better
     void FixedUpdate()
     {
@@ -34,10 +37,15 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-        
+
+        if (Cat.GetComponent<CatControl>() != null)
+        {
+            flying = Cat.GetComponent<CatControl>().flying;
+        }
+
         if (Input.GetKey("d"))
         {
-            if (!flying || bounceControl)
+            if (!flying)
             {
                 rb.AddForce(300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
@@ -45,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey("a"))
         {
-            if (!flying || bounceControl)
+            if (!flying)
             {
 
             rb.AddForce(-300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
@@ -55,15 +63,16 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey("w"))
         {
-            if (!flying || bounceControl)
+            if (!flying)
             {
 
-            rb.AddForce(0, 0, 300 * Time.deltaTime, ForceMode.VelocityChange);
+                rb.AddForce(0, 0, 300 * Time.deltaTime, ForceMode.VelocityChange);
+                //rb.AddForce(transform.forward * 300);
             }                    
         }
         if (Input.GetKey("s"))
         {
-            if (!flying || bounceControl)
+            if (!flying)
             {
 
             rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
@@ -87,25 +96,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        if (Input.GetKey("space"))
-        {
-            //Debug.Log(rb.velocity.y);
-
-            if (!flying)
-            {
-            rb.AddForce(0, verticalForce * Time.deltaTime, 0, ForceMode.VelocityChange);
-            flying = true;
-            }
-
-        }
         if (Input.GetKey(KeyCode.LeftShift)) 
         {
-            
-
-            if (!flying)
-            {
-                rb.velocity = Vector3.zero;
-            }
+   
+            rb.velocity = Vector3.zero;
 
         }
 
@@ -134,81 +128,5 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-        Debug.Log(collision.collider.tag);
-
-        if(collision.collider.tag == "Level is Won")
-        {
-            Debug.Log("Level Complete");
-
-
-        }
-
-
-
-
-        if (collision.collider.tag == "Bounce")
-        {
-            bounceControl = true;
-            rb.AddForce(0, verticalForce * 2 * Time.deltaTime, 0, ForceMode.VelocityChange);
-        }
-        if (collision.collider.tag == "Side Bounce")
-        {
-            var relativePosition = (collision.transform.position - transform.position).normalized;
-            if (relativePosition.x > 0)
-            {
-                Debug.Log("right");
-            }
-            else
-            {
-                Debug.Log("left");
-                
-            }
-
-            if (relativePosition.y > 0)
-            {
-                Debug.Log("above");
-            }
-            else
-            {
-                Debug.Log("below");
-            }
-
-            if (relativePosition.z > 0)
-            {
-                Debug.Log("front");
-            }
-            else
-            {
-                Debug.Log("behind");
-            }
-
-
-            //Vector3 direction = (collision.transform.position - transform.position).normalized;
-
-            //if(Vector3.Dot (transform.forward, direction) > 0)
-            //{
-            //    Debug.Log("back");
-            //}
-            //if (Vector3.Dot(transform.forward, direction) < 0)
-            //{
-            //    Debug.Log("front");
-            //}
-            //if (Vector3.Dot(transform.forward, direction) == 0)
-            //{
-            //    Debug.Log("side");
-            //}
-
-
-
-            //(transform.position - collision.collider.gameObject.transform.position).normalized;
-
-
-            bounceControl = true;
-            //rb.AddForce(verticalForce * 2 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-
-        }
-    }
+    
 }

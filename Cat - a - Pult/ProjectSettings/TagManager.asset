@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Side Bounce
   - LevelWon
+  - Explosion Orb
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - 
   - 
   - Terrain
-  - 
+  - Catapult
   - 
   - 
   - 

@@ -27,10 +27,11 @@ public class CameraChangeView : MonoBehaviour
         {
             transform.Rotate(0, -50 * Time.deltaTime, 0);
         }
-        else if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             transform.Rotate(0, 50 * Time.deltaTime, 0);
         }
+
 
     }
 }

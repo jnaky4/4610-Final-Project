@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameComplete : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class GameComplete : MonoBehaviour
         {
             Debug.Log("Level Complete");
             Destroy(this.gameObject);
+            SceneManager.LoadScene(2);
         }
 
 

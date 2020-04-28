@@ -3705,7 +3705,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061877884}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 65774e057815a5e4fa70215e9acad616, type: 3}
@@ -3865,6 +3865,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1526554761915109350, guid: 076879464bd682945aa7cd31ae139a36, type: 3}
   speed: 20
+  cannon: {fileID: 0}
+  catScream: {fileID: 0}
 --- !u!114 &2061877891
 MonoBehaviour:
   m_ObjectHideFlags: 0

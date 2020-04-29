@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 98297469}
   - component: {fileID: 98297468}
   m_Layer: 0
-  m_Name: Platform F4 (1)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 101176568}
   - component: {fileID: 101176567}
   m_Layer: 0
-  m_Name: Platform F5 (3)
+  m_Name: Platform F5
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 163865247}
   - component: {fileID: 163865246}
   m_Layer: 0
-  m_Name: Platform F4 (5)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -599,7 +599,7 @@ GameObject:
   - component: {fileID: 395040439}
   - component: {fileID: 395040438}
   m_Layer: 0
-  m_Name: Platform F4 (11)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 427676297}
   - component: {fileID: 427676296}
   m_Layer: 0
-  m_Name: Platform F3 (1)
+  m_Name: Platform F3
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -841,7 +841,7 @@ PrefabInstance:
     - target: {fileID: 6369086971389214945, guid: 1babeb052353737498262808881fbc70,
         type: 3}
       propertyPath: m_Name
-      value: Orb (1)
+      value: Orb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1babeb052353737498262808881fbc70, type: 3}
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 596899230}
   - component: {fileID: 596899229}
   m_Layer: 0
-  m_Name: Platform F4 (2)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,7 +1322,7 @@ GameObject:
   - component: {fileID: 721053175}
   - component: {fileID: 721053174}
   m_Layer: 0
-  m_Name: Platform F4 (12)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 758271484}
   - component: {fileID: 758271483}
   m_Layer: 0
-  m_Name: Platform F5 30D (1)
+  m_Name: Platform F5 30D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 791029929}
   - component: {fileID: 791029928}
   m_Layer: 0
-  m_Name: Platform F4 (13)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 811039486}
   - component: {fileID: 811039485}
   m_Layer: 0
-  m_Name: Platform F4 30D (2)
+  m_Name: Platform F4 30D
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1793,7 +1793,7 @@ GameObject:
   - component: {fileID: 811500833}
   - component: {fileID: 811500832}
   m_Layer: 0
-  m_Name: Platform F4 30D (5)
+  m_Name: Platform F4 30D
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1886,7 @@ GameObject:
   - component: {fileID: 918500782}
   - component: {fileID: 918500781}
   m_Layer: 0
-  m_Name: Platform F4 (4)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1979,7 +1979,7 @@ GameObject:
   - component: {fileID: 927129427}
   - component: {fileID: 927129426}
   m_Layer: 0
-  m_Name: Platform F4 (9)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2072,7 +2072,7 @@ GameObject:
   - component: {fileID: 980576913}
   - component: {fileID: 980576912}
   m_Layer: 0
-  m_Name: Platform F4 (6)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2165,7 @@ GameObject:
   - component: {fileID: 1008061342}
   - component: {fileID: 1008061341}
   m_Layer: 0
-  m_Name: Platform F4 30D (4)
+  m_Name: Platform F4 30D
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2259,7 +2259,7 @@ GameObject:
   - component: {fileID: 1051923191}
   - component: {fileID: 1051923190}
   m_Layer: 0
-  m_Name: Sphere (1)
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2368,7 +2368,7 @@ GameObject:
   - component: {fileID: 1082977028}
   - component: {fileID: 1082977027}
   m_Layer: 0
-  m_Name: Platform F4 30D (3)
+  m_Name: Platform F4 30D
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2462,7 +2462,7 @@ GameObject:
   - component: {fileID: 1108450552}
   - component: {fileID: 1108450551}
   m_Layer: 0
-  m_Name: Sphere (3)
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2571,7 +2571,7 @@ GameObject:
   - component: {fileID: 1121938766}
   - component: {fileID: 1121938765}
   m_Layer: 0
-  m_Name: Platform F5 (1)
+  m_Name: Platform F5
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2928,7 +2928,7 @@ GameObject:
   - component: {fileID: 1498019386}
   - component: {fileID: 1498019385}
   m_Layer: 0
-  m_Name: Platform F4 (7)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3114,7 +3114,7 @@ GameObject:
   - component: {fileID: 1545239770}
   - component: {fileID: 1545239769}
   m_Layer: 0
-  m_Name: Platform F4 (3)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3207,7 +3207,7 @@ GameObject:
   - component: {fileID: 1704059089}
   - component: {fileID: 1704059088}
   m_Layer: 0
-  m_Name: Platform F5 (2)
+  m_Name: Platform F5
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3376,7 +3376,7 @@ GameObject:
   - component: {fileID: 1790624072}
   - component: {fileID: 1790624071}
   m_Layer: 0
-  m_Name: Platform F4 (8)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3469,7 +3469,7 @@ GameObject:
   - component: {fileID: 1927354967}
   - component: {fileID: 1927354966}
   m_Layer: 0
-  m_Name: Platform F4 (10)
+  m_Name: Platform F4
   m_TagString: Bounce
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3562,7 +3562,7 @@ GameObject:
   - component: {fileID: 1960437005}
   - component: {fileID: 1960437004}
   m_Layer: 0
-  m_Name: Platform F5 30D (2)
+  m_Name: Platform F5 30D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3655,7 +3655,7 @@ GameObject:
   - component: {fileID: 1978403894}
   - component: {fileID: 1978403893}
   m_Layer: 0
-  m_Name: Platform F4 30D (1)
+  m_Name: Platform F4 30D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3749,7 +3749,7 @@ GameObject:
   - component: {fileID: 2010117987}
   - component: {fileID: 2010117986}
   m_Layer: 0
-  m_Name: Sphere (2)
+  m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

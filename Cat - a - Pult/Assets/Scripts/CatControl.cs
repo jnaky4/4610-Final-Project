@@ -13,6 +13,9 @@ public class CatControl : MonoBehaviour
     public float verticalForce = 2000.0f;
     int count = 0;
     const float maxSpeed = 60f;
+
+    public AudioSource meow;
+
     void Start()
     {
         rb = cat.AddComponent<Rigidbody>();
@@ -90,6 +93,10 @@ public class CatControl : MonoBehaviour
 
                 rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
             }
+        }
+
+        if(Input.GetKey("m")) {
+            meow.Play();
         }
 
         if (rb.velocity.y < .1 && rb.velocity.y > -.1)

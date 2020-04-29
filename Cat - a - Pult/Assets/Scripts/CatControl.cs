@@ -140,28 +140,31 @@ public class CatControl : MonoBehaviour
 
             }
         }
-
-            if (rb.velocity.y < .1 && rb.velocity.y > -.1 && rb.velocity.x < .1 && rb.velocity.x > -.1 && rb.velocity.z < .1 && rb.velocity.z > -.1)
+        if (flying)
         {
-            //Debug.Log("landed");
-
-            if (rb.velocity.y == 0)
-            {
-                count = 1;
-            }
-            if (rb.velocity.y == 0 && count == 1)
+            if (rb.velocity.y == 0 && rb.velocity.x == 0 && rb.velocity.z == 0)
             {
 
-                bounceControl = false;
-                flying = false;
-                if(transform.localPosition != restartPos)
+                if (rb.velocity.y == 0)
                 {
-                    Debug.Log("Stopped Flying");
-                    reset();
+                    count = 1;
                 }
-                count = 0;
+                if (rb.velocity.y == 0 && count == 1)
+                {
+                    Debug.Log("Stopped");
+
+                    bounceControl = false;
+                    flying = false;
+                    if (transform.localPosition != restartPos)
+                    {
+                        Debug.Log("Stopped Flying");
+                        reset();
+                    }
+                    count = 0;
+                }
             }
         }
+
 
         if (rb.velocity.y > .1 || rb.velocity.y < -.1)
         {
@@ -185,7 +188,7 @@ public class CatControl : MonoBehaviour
     {
         if (collision.collider.tag == "Bounce")
         {
-            Debug.Log("Bounce Control");
+            //Debug.Log("Bounce Control");
             bounceControl = true;
             rb.AddForce(0, bounceForce * Time.deltaTime, 0, ForceMode.VelocityChange);
         }

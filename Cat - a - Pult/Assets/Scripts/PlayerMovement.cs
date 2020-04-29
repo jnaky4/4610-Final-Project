@@ -47,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!flying)
             {
-                rb.AddForce(300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                rb.AddForce(transform.right * 300 * Time.deltaTime, ForceMode.VelocityChange);
+                //rb.AddForce(300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
         }
 
@@ -55,8 +56,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!flying)
             {
-
-            rb.AddForce(-300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                rb.AddForce(transform.right * -300 * Time.deltaTime, ForceMode.VelocityChange);
+                //rb.AddForce(-300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
             }
 
             
@@ -65,8 +66,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!flying)
             {
-
-                rb.AddForce(0, 0, 300 * Time.deltaTime, ForceMode.VelocityChange);
+                rb.AddForce(transform.forward * 300 * Time.deltaTime, ForceMode.VelocityChange);
+                //rb.AddForce(0, 0, 300 * Time.deltaTime, ForceMode.VelocityChange);
                 //rb.AddForce(transform.forward * 300);
             }                    
         }
@@ -74,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!flying)
             {
-
-            rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
+                rb.AddForce(transform.forward * -300 * Time.deltaTime, ForceMode.VelocityChange);
+                //rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
             }
         }
         if (Input.GetKey("q"))

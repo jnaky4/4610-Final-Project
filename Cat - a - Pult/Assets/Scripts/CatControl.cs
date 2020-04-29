@@ -6,22 +6,39 @@ public class CatControl : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject cat;
+    public GameObject catapult;
     public bool flying = false;
     public bool bounceControl = false;
     public float jumpVelocity;
     public Rigidbody rb;
-    public float verticalForce = 2000.0f;
+    public float verticalForce = 1000.0f;
+    public float bounceForce = 1200.0f;
+    public float forwardForce = 4.0f;
     int count = 0;
     const float maxSpeed = 60f;
 
-    public AudioSource meow;
+    
+    public Vector3 restartPos;
+    private bool isReset = true;
+    private Quaternion originalRotationValue;
+
+
+
 
     void Start()
     {
         rb = cat.AddComponent<Rigidbody>();
         rb.mass = 3000;
+
         rb.isKinematic = true;
         rb.detectCollisions = false;
+        restartPos = transform.localPosition;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
+        
+        originalRotationValue = transform.rotation;
+
+        
+
     }
     // Update is called once per frame
     private void Update()
@@ -30,16 +47,25 @@ public class CatControl : MonoBehaviour
         {
             if (!flying)
             {
-                verticalForce -= 200;
+                if (forwardForce > 0)
+                {
+                    forwardForce -= 1;
+                }
+                    
             }
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (!flying)
             {
-                verticalForce += 200;
+                if(forwardForce < 15)
+                {
+                    forwardForce += 1;
+                }
+                
             }
         }
+       
     }
 
 
@@ -47,23 +73,26 @@ public class CatControl : MonoBehaviour
     {
 
         if (Input.GetKey("space"))
-        {
 
+
+        {
             rb.isKinematic = false;
             rb.detectCollisions = true;
 
             if (!flying)
             {
                 rb.AddForce(0, verticalForce * Time.deltaTime, 0, ForceMode.VelocityChange);
+                rb.AddForce(transform.forward * forwardForce, ForceMode.VelocityChange);
                 flying = true;
+                isReset = false;
             }
-
+            
         }
         if (Input.GetKey("d"))
         {
             if (!flying || bounceControl)
             {
-                rb.AddForce(300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                rb.AddForce(transform.right * 100 * Time.deltaTime, ForceMode.VelocityChange);
             }
         }
 
@@ -72,7 +101,7 @@ public class CatControl : MonoBehaviour
             if (!flying || bounceControl)
             {
 
-                rb.AddForce(-300 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                rb.AddForce(transform.right * -100 * Time.deltaTime, ForceMode.VelocityChange);
             }
 
 
@@ -82,7 +111,7 @@ public class CatControl : MonoBehaviour
             if (!flying || bounceControl)
             {
 
-                rb.AddForce(0, 0, 300 * Time.deltaTime, ForceMode.VelocityChange);
+                rb.AddForce(transform.forward * 100 * Time.deltaTime, ForceMode.VelocityChange);
                 //rb.AddForce(transform.forward * 300);
             }
         }
@@ -91,15 +120,28 @@ public class CatControl : MonoBehaviour
             if (!flying || bounceControl)
             {
 
-                rb.AddForce(0, 0, -300 * Time.deltaTime, ForceMode.VelocityChange);
+                rb.AddForce(transform.forward * -100 * Time.deltaTime, ForceMode.VelocityChange);
+            }
+        }
+        if (Input.GetKey("q"))
+        {
+            if (flying)
+            {
+                transform.Rotate(Vector3.up, -100.0f * Time.deltaTime);
+
+            }
+        }
+        if (Input.GetKey("e"))
+        {
+            if (flying)
+            {
+
+                transform.Rotate(Vector3.up, 100.0f * Time.deltaTime);
+
             }
         }
 
-        if(Input.GetKey("m")) {
-            meow.Play();
-        }
-
-        if (rb.velocity.y < .1 && rb.velocity.y > -.1)
+            if (rb.velocity.y < .1 && rb.velocity.y > -.1 && rb.velocity.x < .1 && rb.velocity.x > -.1 && rb.velocity.z < .1 && rb.velocity.z > -.1)
         {
             //Debug.Log("landed");
 
@@ -112,94 +154,68 @@ public class CatControl : MonoBehaviour
 
                 bounceControl = false;
                 flying = false;
+                if(transform.localPosition != restartPos)
+                {
+                    Debug.Log("Stopped Flying");
+                    reset();
+                }
                 count = 0;
             }
         }
+
         if (rb.velocity.y > .1 || rb.velocity.y < -.1)
         {
-            //Debug.Log("flying");
+            
             flying = true;
-
+            
+        }
+        if(!isReset && !flying)
+        {
+            //Debug.Log("Stopped Flying");
+        }
+        //Debug.Log(transform.position.y);
+        if(transform.position.y < -10)
+        {
+            Debug.Log("Below World");
+            reset();
         }
         
     }
     private void OnCollisionEnter(Collision collision)
     {
-
-        //Debug.Log(collision.collider.tag);
-
-        if (collision.collider.tag == "LevelWon")
-        {
-            Debug.Log("Level Complete");
-
-
-        }
-
-
-
-
         if (collision.collider.tag == "Bounce")
         {
+            Debug.Log("Bounce Control");
             bounceControl = true;
-            rb.AddForce(0, verticalForce * 2 * Time.deltaTime, 0, ForceMode.VelocityChange);
+            rb.AddForce(0, bounceForce * Time.deltaTime, 0, ForceMode.VelocityChange);
         }
         if (collision.collider.tag == "Side Bounce")
         {
             var relativePosition = (collision.transform.position - transform.position).normalized;
-            if (relativePosition.x > 0)
-            {
-                Debug.Log("right");
-            }
-            else
-            {
-                Debug.Log("left");
-
-            }
-
-            if (relativePosition.y > 0)
-            {
-                Debug.Log("above");
-            }
-            else
-            {
-                Debug.Log("below");
-            }
-
-            if (relativePosition.z > 0)
-            {
-                Debug.Log("front");
-            }
-            else
-            {
-                Debug.Log("behind");
-            }
-
-
-            //Vector3 direction = (collision.transform.position - transform.position).normalized;
-
-            //if(Vector3.Dot (transform.forward, direction) > 0)
-            //{
-            //    Debug.Log("back");
-            //}
-            //if (Vector3.Dot(transform.forward, direction) < 0)
-            //{
-            //    Debug.Log("front");
-            //}
-            //if (Vector3.Dot(transform.forward, direction) == 0)
-            //{
-            //    Debug.Log("side");
-            //}
 
 
 
-            //(transform.position - collision.collider.gameObject.transform.position).normalized;
+
 
 
             bounceControl = true;
-            //rb.AddForce(verticalForce * 2 * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+
 
         }
     }
+    private void reset()
+    {
+        Debug.Log("Reset");
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
+        transform.localPosition = restartPos;
+        //transform.rotation = originalRotationValue;
+        transform.rotation = catapult.transform.rotation;
+        isReset = true;
+
+    }
+
+
 }
 
     

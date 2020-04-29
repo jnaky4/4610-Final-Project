@@ -6,7 +6,6 @@ public class Shoot : MonoBehaviour {
 
     public GameObject bullet;
     public float speed = 5;
-    public AudioSource cannon;
     public AudioSource catScream;
 
     public List<Sphere> sperer;
@@ -28,7 +27,6 @@ public class Shoot : MonoBehaviour {
             GameObject b = GameObject.Instantiate(bullet, transform.position, transform.rotation);
             Rigidbody rgd = b.GetComponent<Rigidbody>();
             rgd.velocity = transform.forward * speed;
-            cannon.Play();
             catScream.Play();
             Destroy(b,3f);
         }

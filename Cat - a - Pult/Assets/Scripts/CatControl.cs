@@ -22,8 +22,8 @@ public class CatControl : MonoBehaviour
     private bool isReset = true;
     private Quaternion originalRotationValue;
 
-
-
+    public AudioSource meow;
+    public AudioSource cannon;
 
     void Start()
     {
@@ -76,6 +76,9 @@ public class CatControl : MonoBehaviour
 
 
         {
+
+            cannon.Play();
+
             rb.isKinematic = false;
             rb.detectCollisions = true;
 
@@ -186,6 +189,7 @@ public class CatControl : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        meow.Play();
         if (collision.collider.tag == "Bounce")
         {
             //Debug.Log("Bounce Control");

@@ -189,7 +189,10 @@ public class CatControl : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        meow.Play();
+        if(collision.collider.tag != "Bounce" && collision.collider.tag != "Side Bounce") {
+            meow.Play();
+        }
+
         if (collision.collider.tag == "Bounce")
         {
             //Debug.Log("Bounce Control");
@@ -199,8 +202,6 @@ public class CatControl : MonoBehaviour
         if (collision.collider.tag == "Side Bounce")
         {
             var relativePosition = (collision.transform.position - transform.position).normalized;
-
-
 
 
 

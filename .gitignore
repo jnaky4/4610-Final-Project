@@ -71,3 +71,4 @@ crashlytics-build.properties
 *.ide-shm
 Cat - a - Pult/.vs/Cat - A - Pult/v16/Server/sqlite3/storage.ide-shm
 Cat - a - Pult/.vs/Cat - A - Pult/v16/Server/sqlite3/storage.ide-wal
+Cat - a - Pult/Assets/Scripts/TumblingCollision.cs

@@ -17,7 +17,6 @@ public class Explosion : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             explode();
-            SceneManager.LoadScene(2); 
         }
 
 

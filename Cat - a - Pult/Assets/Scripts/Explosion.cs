@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 
 public class Explosion : MonoBehaviour
@@ -17,21 +17,23 @@ public class Explosion : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             explode();
-//<<<<<<< HEAD
-            //SceneManager.LoadScene(4); 
-//=======
-//>>>>>>> 7125cafed11c2a9eb8789a60adb22ced4205e461
         }
 
 
 
 
     }
+    private void Update()
+    {
+       // explode();
+    }
 
     // Update is called once per frame
     public void explode()
     {
-
+        //Instantiate(explosionEffect, transform.position, transform.rotation);
+        //Debug.Log("EXPLOSION");
+        //gameObject.SetActive(false);
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)

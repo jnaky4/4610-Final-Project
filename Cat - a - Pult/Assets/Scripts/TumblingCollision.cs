@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class TumblingCollision : MonoBehaviour {
+public class TumblingCollision : MonoBehaviour
+{
 
     public AudioSource sound;
 
@@ -10,9 +11,10 @@ public class TumblingCollision : MonoBehaviour {
         if (collision.relativeVelocity.magnitude > 20)
         {
             sound.Play();
-         
 
+
+
+        }
 
     }
-
 }

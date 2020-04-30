@@ -8,6 +8,6 @@ public class Golevel1 : MonoBehaviour
     public void OnStartGame(int SceneNumber)
     {
         //Application.LoadLevel(SceneNumber);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(5);
     }
 }

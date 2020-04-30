@@ -20,8 +20,9 @@ public class GameComplete : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             Debug.Log("Level Complete");
+            SceneManager.LoadScene(3);
             Destroy(this.gameObject);
-            SceneManager.LoadScene(2);
+            
         }
 
 

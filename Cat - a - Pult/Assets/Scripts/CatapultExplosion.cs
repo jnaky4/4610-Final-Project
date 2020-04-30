@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CatapultExplosion : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CatapultExplosion : MonoBehaviour
         if (collider.gameObject.tag == "Catapult" || collider.gameObject.tag == "Player")
         {
             explode();
+            SceneManager.LoadScene(2); 
         }
     }
     public void explode()

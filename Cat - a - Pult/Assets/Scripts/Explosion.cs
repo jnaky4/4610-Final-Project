@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class Explosion : MonoBehaviour
@@ -17,6 +17,7 @@ public class Explosion : MonoBehaviour
         if(collider.gameObject.tag == "Player")
         {
             explode();
+            SceneManager.LoadScene(2); 
         }
 
 

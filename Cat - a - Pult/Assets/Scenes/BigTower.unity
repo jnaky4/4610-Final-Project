@@ -51579,19 +51579,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 798381077}
   m_PrefabAsset: {fileID: 0}
---- !u!135 &793275535
-SphereCollider:
+--- !u!114 &793275536
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793275533}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d62bba43e3edc974196d68267ec0ddde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &795729565
 GameObject:
   m_ObjectHideFlags: 0
@@ -51821,7 +51820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 837211937, guid: 1babeb052353737498262808881fbc70, type: 3}
       propertyPath: m_Radius
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6369086971389214944, guid: 1babeb052353737498262808881fbc70,
         type: 3}
@@ -51908,7 +51907,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 653572270769296997, guid: 1babeb052353737498262808881fbc70, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1babeb052353737498262808881fbc70, type: 3}
 --- !u!1001 &803097114
 PrefabInstance:

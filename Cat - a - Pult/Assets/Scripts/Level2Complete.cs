@@ -22,7 +22,7 @@ public class Level2Complete : MonoBehaviour
         {
             Debug.Log("Level Complete");
             Destroy(this.gameObject);
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
 
 

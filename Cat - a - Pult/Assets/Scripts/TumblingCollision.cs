@@ -12,7 +12,7 @@ public class TumblingCollision : MonoBehaviour {
         }
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(5);
         }
     }
 }

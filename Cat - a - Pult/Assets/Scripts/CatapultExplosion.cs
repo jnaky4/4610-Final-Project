@@ -24,7 +24,7 @@ public class CatapultExplosion : MonoBehaviour
         if (collider.gameObject.tag == "Catapult" || collider.gameObject.tag == "Player")
         {
             explode();
-            SceneManager.LoadScene(2); 
+            
         }
     }
     public void explode()

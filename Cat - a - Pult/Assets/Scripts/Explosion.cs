@@ -23,17 +23,11 @@ public class Explosion : MonoBehaviour
 
 
     }
-    private void Update()
-    {
-       // explode();
-    }
 
     // Update is called once per frame
     public void explode()
     {
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
-        //Debug.Log("EXPLOSION");
-        //gameObject.SetActive(false);
+
         Vector3 explosionPos = transform.position;
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
         foreach (Collider hit in colliders)

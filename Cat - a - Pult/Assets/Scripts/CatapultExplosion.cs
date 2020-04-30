@@ -20,7 +20,7 @@ public class CatapultExplosion : MonoBehaviour
     }
     public void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Catapult")
+        if (collider.gameObject.tag == "Catapult" || collider.gameObject.tag == "Player")
         {
             explode();
         }

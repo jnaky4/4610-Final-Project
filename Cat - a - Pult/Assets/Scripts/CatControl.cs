@@ -34,7 +34,7 @@ public class CatControl : MonoBehaviour
         rb.detectCollisions = false;
         restartPos = transform.localPosition;
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationY;
-        
+        rb.drag = .1f;
         originalRotationValue = transform.rotation;
 
         

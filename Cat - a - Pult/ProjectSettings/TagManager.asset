@@ -10,6 +10,7 @@ TagManager:
   - LevelWon
   - Explosion Orb
   - Fire
+  - Catapult
   layers:
   - Default
   - TransparentFX

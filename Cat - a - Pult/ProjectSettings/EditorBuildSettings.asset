@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level01.unity
     guid: 81add9282603be74bbf8e0994fb56f7f
   - enabled: 1
+    path: Assets/Scenes/ShootCat.unity
+    guid: 724f1d5762601244b8fb2cc11f4cf8e9
+  - enabled: 1
     path: Assets/Scenes/BounceRoom.unity
     guid: 8f43761eab3edc14f996277df5f99b97
   - enabled: 1
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CityCenter.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/ShootCat.unity
-    guid: 724f1d5762601244b8fb2cc11f4cf8e9
   m_configObjects: {}

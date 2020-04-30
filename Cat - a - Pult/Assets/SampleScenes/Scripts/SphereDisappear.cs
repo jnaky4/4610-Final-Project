@@ -13,7 +13,7 @@ public class SphereDisappear : MonoBehaviour
         if (collision.relativeVelocity.magnitude > minSpeed)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(1); 
+            SceneManager.LoadScene(3); 
         }
 
 

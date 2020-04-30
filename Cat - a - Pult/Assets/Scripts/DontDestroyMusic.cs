@@ -11,6 +11,7 @@ public class DontDestroyMusic : MonoBehaviour
     public AudioSource inputplayer;
     public AudioClip[] inputmusic;
     private static bool nextsong = false;
+    private static bool changevol = false;
 
     void Awake()
     {
@@ -65,6 +66,16 @@ public class DontDestroyMusic : MonoBehaviour
                 }
                 player.clip = songs[curr];
                 player.Play();
+            }
+
+            if (Input.GetKeyDown(KeyCode.O))
+            {
+                changevol = true;
+            }
+
+            if (Input.GetKeyUp(KeyCode.O) && changevol)
+            {
+                player.mute = !player.mute;
             }
         }
     }
